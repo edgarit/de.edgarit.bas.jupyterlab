@@ -1,43 +1,51 @@
-# JupyterLab in Buisness Application Studio by Edgar
+#!/usr/bin/env python
+# coding: utf-8
 
-## user vim as code editor
+# # JupyterLab in Buisness Application Studio by Edgar
+
+# ## user vim as code editor
+
+# In[ ]:
 
 
-```python
 import os
 os.chdir(os.path.expanduser('~'))
 os.system('echo "export GIT_EDITOR=vim" >> .bashrc')
 os.system('source ~/.bashrc')
-```
-
-## download pip package management
 
 
-```python
+# ## download pip package management
+
+# In[ ]:
+
+
 os.system('curl -LO https://bootstrap.pypa.io/get-pip.py')
 os.system('python3 get-pip.py')
 os.system('echo "export PATH=/home/user/.local/bin:$PATH" >> .bashrc')
 os.system('source ~/.bashrc')
-```
-
-## install jupyter
 
 
-```python
+# ## install jupyter
+
+# In[ ]:
+
+
 os.system('pip install jupyter')
-```
-
-## generate jupyter config
 
 
-```python
+# ## generate jupyter config
+
+# In[ ]:
+
+
 os.system('jupyter notebook --generate-config')
-```
-
-## add access url config to jupyter config
 
 
-```python
+# ## add access url config to jupyter config
+
+# In[ ]:
+
+
 import os
 import socket
 print("hostname: "+socket.gethostname())
@@ -46,34 +54,38 @@ origin = 'https://port8702-'+hostname_array[0]+'-'+hostname_array[1]+'-'+hostnam
 print("origin: "+origin)
 with open(os.path.expanduser('~/.jupyter/jupyter_notebook_config.py'), 'a') as file:
     file.write('\nc.ServerApp.allow_origin = \''+origin+'\'')
-```
-
-## install jupyterlab
 
 
-```python
+# ## install jupyterlab
+
+# In[ ]:
+
+
 os.system('pip install jupyterlab')
-```
-
-## create README.md
 
 
-```python
+# ## create README.md
+
+# In[ ]:
+
+
 #jupyter nbconvert --to Markdown notebook.ipynb
 #cp notebook.md README.md 
-```
-
-## create install.py
 
 
-```python
+# ## create install.py
+
+# In[ ]:
+
+
 #jupyter nbconvert --to python notebook.ipynb
 #cp notebook.py install.py
-```
-
-## run jupyterlab
 
 
-```python
+# ## run jupyterlab
+
+# In[ ]:
+
+
 os.system('jupyter-lab')
-```
+
