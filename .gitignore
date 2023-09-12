@@ -1,3 +1,5 @@
 .ipynb_checkpoints
 notebook.py
 notebook.md
+notebook.nbconvert.ipynb
+get-pip.py
