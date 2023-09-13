@@ -7,7 +7,7 @@
 
 # ## preprocessing
 
-# In[1]:
+# In[2]:
 
 
 import os
@@ -60,7 +60,7 @@ os.system("echo PATH: "+os.environ["PATH"])
 
 # ## user vim as code editor
 
-# In[2]:
+# In[3]:
 
 
 fileaddlineifnotinfile(os.path.expanduser('~/.bashrc'),"export GIT_EDITOR=vim\n")
@@ -69,7 +69,7 @@ os.system('export GIT_EDITOR=vim')
 
 # ## download pip package management
 
-# In[3]:
+# In[4]:
 
 
 os.system('curl -LO https://bootstrap.pypa.io/get-pip.py')
@@ -80,7 +80,7 @@ os.system('export PATH=/home/user/.local/bin:$PATH')
 
 # ## install jupyter
 
-# In[4]:
+# In[5]:
 
 
 os.system('pip install jupyter')
@@ -88,17 +88,19 @@ os.system('pip install jupyter')
 
 # ## generate jupyter config
 
-# In[5]:
+# In[6]:
 
 
 os.system('echo y | jupyter notebook --generate-config')
 fileaddlineifnotinfile(os.path.expanduser('~/.bashrc'),"alias jupyterlab='jupyter-lab --ip=127.0.0.1 --port 8702'\n")
 os.system('alias jupyterlab="jupyter-lab --ip=127.0.0.1 --port 8702"')
+fileaddlineifnotinfile(os.path.expanduser('~/.bashrc'),"alias baslab='python3 /home/user/projects/de.edgarit.bas.jupyterlab/install.py && jupyterlab'\n")
+os.system('alias baslab="python3 /home/user/projects/de.edgarit.bas.jupyterlab/install.py && jupyterlab"')
 
 
 # ## add access url config to jupyter config
 
-# In[6]:
+# In[7]:
 
 
 import os
@@ -113,7 +115,7 @@ with open(os.path.expanduser('~/.jupyter/jupyter_notebook_config.py'), 'a') as f
 
 # ## install jupyterlab
 
-# In[7]:
+# In[8]:
 
 
 os.system('pip install jupyterlab')
@@ -121,7 +123,7 @@ os.system('pip install jupyterlab')
 
 # ## create README.md
 
-# In[8]:
+# In[9]:
 
 
 os.system('jupyter nbconvert --to Markdown notebook.ipynb && cp notebook.md README.md')
@@ -129,7 +131,7 @@ os.system('jupyter nbconvert --to Markdown notebook.ipynb && cp notebook.md READ
 
 # ## create install.py
 
-# In[9]:
+# In[10]:
 
 
 os.system('jupyter nbconvert --to python notebook.ipynb && cp notebook.py install.py')
