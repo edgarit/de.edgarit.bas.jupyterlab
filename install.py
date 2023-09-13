@@ -7,7 +7,7 @@
 
 # ## preprocessing
 
-# In[30]:
+# In[1]:
 
 
 import os
@@ -60,7 +60,7 @@ os.system("echo PATH: "+os.environ["PATH"])
 
 # ## user vim as code editor
 
-# In[32]:
+# In[2]:
 
 
 fileaddlineifnotinfile(os.path.expanduser('~/.bashrc'),"export GIT_EDITOR=vim\n")
@@ -69,7 +69,7 @@ os.system('export GIT_EDITOR=vim')
 
 # ## download pip package management
 
-# In[33]:
+# In[3]:
 
 
 os.system('curl -LO https://bootstrap.pypa.io/get-pip.py')
@@ -80,7 +80,7 @@ os.system('export PATH=/home/user/.local/bin:$PATH')
 
 # ## install jupyter
 
-# In[18]:
+# In[4]:
 
 
 os.system('pip install jupyter')
@@ -88,7 +88,7 @@ os.system('pip install jupyter')
 
 # ## generate jupyter config
 
-# In[35]:
+# In[5]:
 
 
 os.system('echo y | jupyter notebook --generate-config')
@@ -98,7 +98,7 @@ os.system('alias jupyterlab="jupyter-lab --ip=127.0.0.1 --port 8702"')
 
 # ## add access url config to jupyter config
 
-# In[36]:
+# In[6]:
 
 
 import os
@@ -113,7 +113,7 @@ with open(os.path.expanduser('~/.jupyter/jupyter_notebook_config.py'), 'a') as f
 
 # ## install jupyterlab
 
-# In[24]:
+# In[7]:
 
 
 os.system('pip install jupyterlab')
@@ -121,7 +121,7 @@ os.system('pip install jupyterlab')
 
 # ## create README.md
 
-# In[37]:
+# In[8]:
 
 
 os.system('jupyter nbconvert --to Markdown notebook.ipynb && cp notebook.md README.md')
@@ -129,7 +129,7 @@ os.system('jupyter nbconvert --to Markdown notebook.ipynb && cp notebook.md READ
 
 # ## create install.py
 
-# In[ ]:
+# In[9]:
 
 
 os.system('jupyter nbconvert --to python notebook.ipynb && cp notebook.py install.py')
