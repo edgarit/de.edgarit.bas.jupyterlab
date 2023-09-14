@@ -94,8 +94,8 @@ os.system('pip install jupyter')
 os.system('echo y | jupyter notebook --generate-config')
 fileaddlineifnotinfile(os.path.expanduser('~/.bashrc'),"alias jupyterlab='jupyter-lab --ip=127.0.0.1 --port 8702'\n")
 os.system('alias jupyterlab="jupyter-lab --ip=127.0.0.1 --port 8702"')
-fileaddlineifnotinfile(os.path.expanduser('~/.bashrc'),"alias baslab='python3 /home/user/projects/de.edgarit.bas.jupyterlab/install.py && jupyterlab'\n")
-os.system('alias baslab="python3 /home/user/projects/de.edgarit.bas.jupyterlab/install.py && jupyterlab"')
+fileaddlineifnotinfile(os.path.expanduser('~/.bashrc'),'''alias baslab='if [[ $(netstat -tulpn | grep LISTEN | grep :8702) ]]; then echo jupyterlab is running && jupyter notebook list; else python3 /home/user/projects/de.edgarit.bas.jupyterlab/install.py && jupyterlab; fi'\n''')
+os.system('''alias baslab='if [[ $(netstat -tulpn | grep LISTEN | grep :8702) ]]; then echo jupyterlab is running && jupyter notebook list; else python3 /home/user/projects/de.edgarit.bas.jupyterlab/install.py && jupyterlab; fi'\n''')
 
 
 # ## add access url config to jupyter config
